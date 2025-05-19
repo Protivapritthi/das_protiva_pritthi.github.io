@@ -1,48 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Protiva Das - Academic Profile</title>
   <style>
-    body { font-family: sans-serif; padding: 40px; line-height: 1.6; }
-    h1 { color: #222; }
-    h2 { color: #444; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    h1, h2 {
+      color: #2c3e50;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #2c3e50;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    @media (min-width: 600px) {
+      .profile {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>PROTIVA DAS</h1>
-  <p>MSc Student | Researcher in HCI/NLP/Privacy</p>
 
-  <h2>About Me</h2>
-  <p>I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI) and Privacy. My MSc thesis, supervised by Professor Farig Yousuf Sadeque, explores the intersection of user-centered design and digital privacy in emerging technologies. I am currently based in Norfolk, Virginia, USA, and actively seeking PhD opportunities for Spring and Fall 2026.
+  <header>
+    <h1>PROTIVA DAS</h1>
+    <p>MSc Student | Researcher in HCI/NLP/Privacy</p>
+  </header>
 
-Beyond academics, I enjoy immersing myself in travel documentaries and reading novels, which broaden my perspective and creativity. I am always eager to collaborate on impactful research that bridges technology and human experience.
+  <div class="container">
+    <section class="profile">
+      <img src="profile.jpg" alt="Protiva Das Profile Photo">
+      <div>
+        <p>
+          I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI) and Privacy. My MSc thesis, supervised by Professor Farig Yousuf Sadeque, explores the intersection of user-centered design and digital privacy in emerging technologies. I am currently based in Norfolk, Virginia, USA, and actively seeking PhD opportunities for Spring and Fall 2026.
+        </p>
+        <p>
+          Beyond academics, I enjoy immersing myself in travel documentaries and reading novels, which broaden my perspective and creativity. I am always eager to collaborate on impactful research that bridges technology and human experience.
+        </p>
+        <p>
+          📧 <strong>Email:</strong> dasprotiva319@gmail.com<br>
+          📱 <strong>Phone:</strong> +1 (757) 237-8006<br>
+          📍 <strong>Current Address:</strong> Norfolk, Virginia, USA<br>
+          🔗 <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">View Profile</a>
+        </p>
+        <a href="Protiva_Das_Resume.pdf" class="button" download>Download My Resume</a>
+      </div>
+    </section>
 
-📧 Email: dasprotiva319@gmail.com
+    <h2>Research Projects</h2>
+    <ul>
+      <li><strong>Exploring Privacy Awareness in Social Media Design</strong> – A qualitative study focusing on user feedback and UI patterns for privacy protection.</li>
+      <li><strong>Conversational Interfaces for Mental Health</strong> – Designing empathetic chatbots for stress and mental wellness check-ins.</li>
+    </ul>
 
-📱 Phone: +1 (757) 237-8006
+    <h2>Journal Publications</h2>
+    <ul>
+      <li><strong>Sentiment Analysis on Twitter Tweets About COVID-19 Vaccines Using NLP and Supervised KNN Classification Algorithm</strong> – Indonesian Journal of Electrical Engineering and Computer Science, 2021 [<a href="#">PDF</a>]</li>
+    </ul>
 
-📍 Current Address: Norfolk, Virginia, USA
+    <h2>Conference Publications</h2>
+    <ul>
+      <li><strong>CNN-GRU Based Fusion Architecture for Bengali License Plate Recognition with Explainable AI</strong> – 14th ICCCNT, 2023 [<a href="#">PDF</a>]</li>
+      <li><strong>Unveiling Employee Job Satisfaction: Harnessing Deep Learning for Sentiment Analysis</strong> – 26th ICCIT, 2023 [<a href="#">PDF</a>]</li>
+      <li><strong>A Comprehensive Study on Pre-Pruning and Post-Pruning Methods of Decision Tree Classification Algorithm</strong> – 5th ICOEI, 2021 [<a href="#">PDF</a>]</li>
+    </ul>
 
-🔗 Google Scholar: https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao
+    <h2>Conferences Attended</h2>
+    <ul>
+      <li>5th CCI Symposium, Richmond, Virginia, USA, 2025</li>
+      <li>26th ICCIT, Cox's Bazar, Bangladesh, 2023</li>
+      <li>14th ICCNT, IIT Delhi, India</li>
+      <li>5th ICOEI, 2021 (Remote)</li>
+    </ul>
 
-</p>
+    <h2>Awards, Fellowships, & Grants</h2>
+    <ul>
+      <li>
+        <strong>2024–2025:</strong> BRAC University Scholarship  
+        <br>Received 50% tuition waiver and an additional 10% in the final semester  
+        <br><em>Master's in Computer Science and Engineering</em>  
+        <br><strong>Total Amount:</strong> 1,20,000 BDT
+      </li>
+      <li>
+        <strong>2023–2025:</strong> Research Grant from Woosong University  
+        <br><strong>Total Amount:</strong> 1,40,000 BDT
+      </li>
+    </ul>
 
-  <h2>Publications</h2>
-  <ul>
-    <li><strong>CNN-GRU Based Fusion Architecture for Bengali License Plate Recognition with Explainable AI</strong> - 14th International Conference on Computing Communication and Networking Technologies (ICCCNT), 2023 [<a href="#">PDF</a>]</li>
-  </ul>
-    <li><Sentiment Analysis to Determine Employee Job Satisfaction Using Machine Learning Techniques</strong> - BRAC University, 2023 [<a href="#">PDF</a>]</li>
-  </ul>
-    <li><strong>Unveiling Employee Job Satisfaction: Harnessing Deep Learning for Sentiment Analysis</strong> - 26th International Conference on Computer and Information Technology (ICCIT), 2023 [<a href="#">PDF</a>]</li>
-  </ul>
-    <li><strong>A Comprehensive Study on Pre-Pruning and Post-Pruning Methods of Decision Tree Classification Algorithm</strong> -  5th International Conference on Trends in Electronics and Informatics (ICOEI), 2021 [<a href="#">PDF</a>]</li>
-  </ul>
-    <li><strong>Sentiment Analysis on Twitter Tweets About COVID-19 Vaccines Using NLP and Supervised KNN Classification Algorithm</strong> - Indonesian Journal of Electrical Engineering and Computer Science, 2021 [<a href="#">PDF</a>]</li>
-  </ul>
+    <h2>Reach Me Here</h2>
+    <p><strong>Email:</strong> dasprotiva319@gmail.com</p>
+  </div>
 
-
-
-  <h2>Reach Me Here</h2>
-  <p>Email:dasprotiva319@gmail.com</p>
 </body>
 </html>
