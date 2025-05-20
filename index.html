@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Protiva Das - Academic Profile</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f9f9f9;
@@ -17,11 +18,38 @@
       color: white;
       padding: 20px;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav {
+      background-color: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     .container {
       max-width: 900px;
       margin: 30px auto;
-      padding: 0 20px;
+      padding: 0 5vw;
     }
     .profile {
       display: flex;
@@ -37,8 +65,18 @@
       object-fit: cover;
       margin-bottom: 15px;
     }
-    h1, h2 {
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
       color: #2c3e50;
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #2c3e50;
+      border-top: 1px solid #ddd;
+      padding-top: 20px;
+      margin-top: 40px;
     }
     ul {
       list-style-type: disc;
@@ -62,6 +100,10 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #1a252f;
     }
     .social-icons {
       margin-top: 20px;
@@ -70,6 +112,15 @@
       width: 24px;
       height: 24px;
       margin-right: 12px;
+    }
+    .badge {
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-left: 8px;
+      font-size: 0.85em;
     }
     @media (min-width: 600px) {
       .profile {
@@ -88,8 +139,18 @@
     <p>MSc Student | Researcher in HCI/NLP/Privacy</p>
   </header>
 
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <div class="container">
-    <section class="profile">
+    <section class="profile" id="about">
       <img src="profile.jpg" alt="Protiva Das Profile Photo">
       <div>
         <p>
@@ -108,15 +169,15 @@
       </div>
     </section>
 
-    <h2>Research Projects</h2>
+    <h2 id="projects">Research Projects</h2>
     <ul>
       <li><strong>Perceptions and Impacts of Digitally Synthesized Intimate Content in Bangladesh:</strong> An HCI and ethics-focused exploration of AI-generated deepfake imagery and user awareness in conservative societies.</li>
       <li><strong>Workforce Transitions in Aviation Post-COVID:</strong> A socio-technical study of employment patterns in the aviation industry across pre-, during-, and post-pandemic phases.</li>
     </ul>
 
-    <h2>Journal Publications</h2>
+    <h2 id="publications">Journal Publications</h2>
     <ul>
-      <li><strong>Sentiment Analysis on Twitter Tweets About COVID-19 Vaccines Using NLP and Supervised KNN Classification Algorithm</strong> – Indonesian Journal of Electrical Engineering and Computer Science, 2021 [<a href="#">PDF</a>]</li>
+      <li><strong>Sentiment Analysis on Twitter Tweets About COVID-19 Vaccines Using NLP and Supervised KNN Classification Algorithm</strong> <span class="badge">Top Cited</span> – Indonesian Journal of Electrical Engineering and Computer Science, 2021 [<a href="#">PDF</a>]</li>
     </ul>
 
     <h2>Conference Publications</h2>
@@ -134,13 +195,13 @@
       <li>5th ICOEI, 2021 (Remote)</li>
     </ul>
 
-    <h2>Awards, Fellowships, & Grants</h2>
+    <h2 id="awards">Awards, Fellowships, & Grants</h2>
     <ul>
       <li><strong>2024–2025:</strong> BRAC University Scholarship – 50% tuition waiver + 10% final semester <br><strong>Total:</strong> 1,20,000 BDT</li>
       <li><strong>2023–2025:</strong> Research Grant, Woosong University <br><strong>Total:</strong> 1,40,000 BDT</li>
     </ul>
 
-    <h2>Reach Me Here</h2>
+    <h2 id="contact">Reach Me Here</h2>
     <p><strong>Email:</strong> dasprotiva319@gmail.com</p>
 
     <div class="social-icons">
@@ -149,8 +210,6 @@
       </a>
       <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
-      </a>
-
       </a>
     </div>
   </div>
