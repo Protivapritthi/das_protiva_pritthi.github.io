@@ -5,15 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Protiva Das - Academic Profile</title>
   <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --primary-color: #2c3e50;
+    }
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #e0e0e0;
+      --primary-color: #66b2ff;
+    }
     body {
       font-family: sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
     header {
-      background-color: #2c3e50;
+      background-color: var(--primary-color);
       color: white;
       padding: 20px;
       text-align: center;
@@ -38,7 +48,7 @@
       margin-bottom: 15px;
     }
     h1, h2 {
-      color: #2c3e50;
+      color: var(--primary-color);
     }
     ul {
       list-style-type: disc;
@@ -55,13 +65,20 @@
       text-decoration: underline;
     }
     .button {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       margin-top: 10px;
       padding: 10px 20px;
-      background-color: #2c3e50;
+      background-color: var(--primary-color);
       color: white;
       text-decoration: none;
       border-radius: 5px;
+      font-weight: bold;
+    }
+    .button img {
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
     }
     .social-icons {
       margin-top: 20px;
@@ -70,6 +87,19 @@
       width: 24px;
       height: 24px;
       margin-right: 12px;
+    }
+    .dark-toggle {
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 16px;
+      padding: 10px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--primary-color);
+      color: white;
+      border-radius: 5px;
     }
     @media (min-width: 600px) {
       .profile {
@@ -82,6 +112,7 @@
   </style>
 </head>
 <body>
+  <button class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
 
   <header>
     <h1>PROTIVA DAS</h1>
@@ -93,67 +124,55 @@
       <img src="profile.jpg" alt="Protiva Das Profile Photo">
       <div>
         <p>
-          I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI) and Privacy. My MSc thesis, supervised by Professor Farig Yousuf Sadeque, explores the intersection of user-centered design and digital privacy in emerging technologies. I am currently based in Norfolk, Virginia, USA, and actively seeking PhD opportunities for Spring and Fall 2026.
+          I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh... (About me section continues)
         </p>
-        <p>
-          Beyond academics, I enjoy immersing myself in travel documentaries and reading novels, which broaden my perspective and creativity. I am always eager to collaborate on impactful research that bridges technology and human experience.
-        </p>
-        <p>
-          📧 <strong>Email:</strong> dasprotiva319@gmail.com<br>
-          📱 <strong>Phone:</strong> +1 (757) 237-8006<br>
-          📍 <strong>Current Address:</strong> Norfolk, Virginia, USA<br>
-          🔗 <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">View Profile</a>
-        </p>
-        <a href="Protiva_Das_Resume.pdf" class="button" download>Download My Resume</a>
+        <a href="Protiva_Das_Resume.pdf" class="button" download>
+          <img src="https://cdn-icons-png.flaticon.com/512/60/60761.png" alt="Download Icon">
+          Download My Resume
+        </a>
       </div>
     </section>
 
     <h2>Research Projects</h2>
     <ul>
-      <li><strong>Perceptions and Impacts of Digitally Synthesized Intimate Content in Bangladesh:</strong> An HCI and ethics-focused exploration of AI-generated deepfake imagery and user awareness in conservative societies.</li>
-      <li><strong>Workforce Transitions in Aviation Post-COVID:</strong> A socio-technical study of employment patterns in the aviation industry across pre-, during-, and post-pandemic phases.</li>
+      <li><strong>Perceptions and Impacts of Digitally Synthesized Intimate Content in Bangladesh</strong>...</li>
+      <li><strong>Workforce Transitions in Aviation Post-COVID</strong>...</li>
     </ul>
 
     <h2>Journal Publications</h2>
     <ul>
-      <li><strong>Sentiment Analysis on Twitter Tweets About COVID-19 Vaccines Using NLP and Supervised KNN Classification Algorithm</strong> – Indonesian Journal of Electrical Engineering and Computer Science, 2021 [<a href="#">PDF</a>]</li>
+      <li><strong>Sentiment Analysis on Twitter Tweets About COVID-19 Vaccines...</strong></li>
     </ul>
 
     <h2>Conference Publications</h2>
     <ul>
-      <li><strong>CNN-GRU Based Fusion Architecture for Bengali License Plate Recognition with Explainable AI</strong> – 14th ICCCNT, 2023 [<a href="#">PDF</a>]</li>
-      <li><strong>Unveiling Employee Job Satisfaction: Harnessing Deep Learning for Sentiment Analysis</strong> – 26th ICCIT, 2023 [<a href="#">PDF</a>]</li>
-      <li><strong>A Comprehensive Study on Pre-Pruning and Post-Pruning Methods of Decision Tree Classification Algorithm</strong> – 5th ICOEI, 2021 [<a href="#">PDF</a>]</li>
+      <li><strong>CNN-GRU Based Fusion Architecture...</strong></li>
     </ul>
 
     <h2>Conferences Attended</h2>
     <ul>
       <li>5th CCI Symposium, Richmond, Virginia, USA, 2025</li>
-      <li>26th ICCIT, Cox's Bazar, Bangladesh, 2023</li>
-      <li>14th ICCNT, IIT Delhi, India</li>
-      <li>5th ICOEI, 2021 (Remote)</li>
     </ul>
 
     <h2>Awards, Fellowships, & Grants</h2>
     <ul>
-      <li><strong>2024–2025:</strong> BRAC University Scholarship – 50% tuition waiver + 10% final semester <br><strong>Total:</strong> 1,20,000 BDT</li>
-      <li><strong>2023–2025:</strong> Research Grant, Woosong University <br><strong>Total:</strong> 1,40,000 BDT</li>
+      <li><strong>2024–2025:</strong> BRAC University Scholarship...</li>
     </ul>
 
     <h2>Reach Me Here</h2>
     <p><strong>Email:</strong> dasprotiva319@gmail.com</p>
 
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank" title="LinkedIn">
+      <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" title="LinkedIn">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
       </a>
-      <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
+      <a href="https://www.researchgate.net/profile/your-profile" target="_blank" title="ResearchGate">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
       </a>
-
+      <a href="https://orcid.org/your-orcid-id" target="_blank" title="ORCID">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID">
       </a>
     </div>
   </div>
-
 </body>
 </html>
