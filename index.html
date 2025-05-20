@@ -22,17 +22,6 @@
       top: 0;
       z-index: 1000;
     }
-    header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      letter-spacing: 1px;
-      margin: 0;
-    }
-    header p {
-      font-size: 1.25rem;
-      font-style: italic;
-      margin-top: 10px;
-    }
     nav {
       background-color: #34495e;
       padding: 10px;
@@ -79,7 +68,7 @@
     h1 {
       font-size: 2.5rem;
       font-weight: 700;
-      color: #2c3e50;
+      color: #ffffff;
     }
     h2 {
       font-size: 1.8rem;
@@ -145,18 +134,34 @@
       margin-right: 8px;
       color: #2c3e50;
     }
+    .card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    .card p {
+      margin: 5px 0;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>PROTIVA DAS</h1>
+    <h1><strong>PROTIVA DAS</strong></h1>
     <p>MSc Student | Researcher in HCI/NLP/Privacy</p>
   </header>
 
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#research">Research Experience</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Publications</a></li>
@@ -184,6 +189,21 @@
         <a href="Protiva_Das_Resume.pdf" class="button" download>Download My Resume</a>
       </div>
     </section>
+
+    <h2 id="research">🔬 Research Experience</h2>
+    <ul>
+      <li>
+        <strong>Research Associate</strong>, Multimedia Signal and Image Processing Research Group<br>
+        <em>Supervisor: Dr. Jia Uddin</em><br>
+        <strong>October 2020 – Present</strong><br>
+        Focus: Image Processing, Medical Imaging, Deep Learning, Artificial Intelligence
+      </li>
+      <li>
+        <strong>Research Collaborator and Associate</strong>, BRAC University<br>
+        <strong>2023 – Present</strong><br>
+        Collaborative work in computer vision, AI, and cross-institutional research
+      </li>
+    </ul>
 
     <h2 id="education">🎓 Education</h2>
     <ul>
@@ -219,27 +239,21 @@
       <li>5th ICOEI, 2021 (Remote)</li>
     </ul>
 
-    <h2 id="awards">Awards, Fellowships, & Grants</h2>
-    <ul>
-      <li><strong>2024–2025:</strong> BRAC University Scholarship – 50% tuition waiver + 10% final semester <br><strong>Total:</strong> 1,20,000 BDT</li>
-      <li><strong>2023–2025:</strong> Research Grant, Woosong University <br><strong>Total:</strong> 1,40,000 BDT</li>
-    </ul>
+    <h2 id="awards">🏅 Awards, Fellowships, & Grants</h2>
+    <div class="card">
+      <h3>BRAC University Scholarship (2024–2025)</h3>
+      <p>50% tuition waiver + 10% waiver in final semester</p>
+      <p><strong>Total Awarded:</strong> ৳১,২০,০০০ BDT (~$1,100 USD)</p>
+    </div>
+    <div class="card">
+      <h3>Research Grant – Woosong University (2023–2025)</h3>
+      <p>Awarded for collaborative research work</p>
+      <p><strong>Total Awarded:</strong> ৳১,৪০,০০০ BDT (~$1,280 USD)</p>
+    </div>
 
-    <h2 id="language">🌐 Language Proficiency Test</h2>
+    <h2>Language Proficiency Test</h2>
     <ul>
-      <li><strong>IELTS (International English Language Testing System):</strong> Scored 6.5 out of 9.0 — No band less than 6.</li>
-    </ul>
-
-    <h2 id="research-experience">🔬 Research Experiences</h2>
-    <ul>
-      <li><strong>Research Associate</strong>, <em>Multimedia Signal and Image Processing Research Group</em><br>
-        Supervisor: Dr. Jia Uddin<br>
-        October 2020 ‐ Present<br>
-        Areas: Image Processing, Medical Imaging, Deep Learning, Artificial Intelligence
-      </li>
-      <li><strong>Research Collaborator & Associate</strong>, <em>BRAC University</em><br>
-        2023 – Present
-      </li>
+      <li><strong>International English Language Testing System (IELTS):</strong> 6.5 out of 9.0 (No band less than 6)</li>
     </ul>
 
     <h2 id="contact">Reach Me Here</h2>
