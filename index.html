@@ -122,27 +122,6 @@
       margin-left: 8px;
       font-size: 0.85em;
     }
-    .testimonial {
-      background-color: #ffffff;
-      border-left: 4px solid #2c3e50;
-      margin-top: 30px;
-      padding: 20px;
-      font-style: italic;
-      position: relative;
-    }
-    .testimonial::before {
-      content: "\201C";
-      font-size: 3em;
-      color: #2c3e50;
-      position: absolute;
-      top: -10px;
-      left: 10px;
-    }
-    .testimonial-author {
-      text-align: right;
-      font-weight: bold;
-      margin-top: 10px;
-    }
     @media (min-width: 600px) {
       .profile {
         flex-direction: row;
@@ -151,18 +130,23 @@
         gap: 20px;
       }
     }
+    .education-icon {
+      margin-right: 8px;
+      color: #2c3e50;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>PROTIVA DAS</h1>
+    <h1><strong>PROTIVA DAS</strong></h1>
     <p>MSc Student | Researcher in HCI/NLP/Privacy</p>
   </header>
 
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#awards">Awards</a></li>
@@ -175,7 +159,7 @@
       <img src="profile.jpg" alt="Protiva Das Profile Photo">
       <div>
         <p>
-          I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI) and Privacy. My MSc thesis, supervised by Professor Farig Yousuf Sadeque, explores the intersection of user-centered design and digital privacy in emerging technologies. I am currently based in Norfolk, Virginia, USA, and actively seeking PhD opportunities for Spring and Fall 2026.
+          I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI) and Privacy. My MSc thesis, supervised by <a href="https://sites.google.com/site/farigsadeque" target="_blank">Professor Farig Yousuf Sadeque</a>, explores the intersection of user-centered design and digital privacy in emerging technologies. I am currently based in Norfolk, Virginia, USA, and actively seeking PhD opportunities for Spring and Fall 2026.
         </p>
         <p>
           Beyond academics, I enjoy immersing myself in travel documentaries and reading novels, which broaden my perspective and creativity. I am always eager to collaborate on impactful research that bridges technology and human experience.
@@ -189,6 +173,14 @@
         <a href="Protiva_Das_Resume.pdf" class="button" download>Download My Resume</a>
       </div>
     </section>
+
+    <h2 id="education">🎓 Education</h2>
+    <ul>
+      <li><span class="education-icon">📘</span><strong>MSc in CSE</strong>, BRAC University, Dhaka, Bangladesh (2024–2025)<br>
+      Thesis Based Masters (18 credit), Supervisor: <a href="https://sites.google.com/site/farigsadeque" target="_blank">Farig Yousuf Sadeque</a></li>
+      <li><span class="education-icon">📗</span><strong>Bachelor of Science in Computer Science</strong>, BRAC University (2018–2023)</li>
+      <li><span class="education-icon">📙</span><strong>HSC, Major in Science</strong>, Brahmanbaria Govt. College, Class of 2017</li>
+    </ul>
 
     <h2 id="projects">Research Projects</h2>
     <ul>
@@ -232,11 +224,6 @@
       <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
       </a>
-    </div>
-
-    <div class="testimonial">
-      I’ve had the pleasure of mentoring Protiva on multiple research projects. Her dedication to academic excellence and curiosity in the field of HCI are truly remarkable. She is an asset to any research team.
-      <div class="testimonial-author">— Prof. Farig Yousuf Sadeque</div>
     </div>
   </div>
 
