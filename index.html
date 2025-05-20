@@ -122,6 +122,27 @@
       margin-left: 8px;
       font-size: 0.85em;
     }
+    .testimonial {
+      background-color: #ffffff;
+      border-left: 4px solid #2c3e50;
+      margin-top: 30px;
+      padding: 20px;
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial::before {
+      content: "\201C";
+      font-size: 3em;
+      color: #2c3e50;
+      position: absolute;
+      top: -10px;
+      left: 10px;
+    }
+    .testimonial-author {
+      text-align: right;
+      font-weight: bold;
+      margin-top: 10px;
+    }
     @media (min-width: 600px) {
       .profile {
         flex-direction: row;
@@ -211,6 +232,11 @@
       <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
       </a>
+    </div>
+
+    <div class="testimonial">
+      I’ve had the pleasure of mentoring Protiva on multiple research projects. Her dedication to academic excellence and curiosity in the field of HCI are truly remarkable. She is an asset to any research team.
+      <div class="testimonial-author">— Prof. Farig Yousuf Sadeque</div>
     </div>
   </div>
 
