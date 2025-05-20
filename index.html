@@ -4,16 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Protiva Das - Academic Profile</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
   <style>
     :root {
       --bg-color: #f9f9f9;
       --text-color: #333;
-      --primary-color: #2c3e50;
+      --header-bg: #2c3e50;
+      --button-bg: #2c3e50;
     }
-    body.dark-mode {
-      --bg-color: #1e1e1e;
-      --text-color: #e0e0e0;
-      --primary-color: #66b2ff;
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #f1f1f1;
+      --header-bg: #1a1a1a;
+      --button-bg: #333;
     }
     body {
       font-family: sans-serif;
@@ -23,10 +33,15 @@
       color: var(--text-color);
     }
     header {
-      background-color: var(--primary-color);
+      background-color: var(--header-bg);
       color: white;
       padding: 20px;
       text-align: center;
+    }
+    .toggle-theme {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
     .container {
       max-width: 900px;
@@ -48,7 +63,7 @@
       margin-bottom: 15px;
     }
     h1, h2 {
-      color: var(--primary-color);
+      color: var(--header-bg);
     }
     ul {
       list-style-type: disc;
@@ -65,41 +80,35 @@
       text-decoration: underline;
     }
     .button {
-      display: inline-flex;
-      align-items: center;
+      display: inline-block;
       margin-top: 10px;
       padding: 10px 20px;
-      background-color: var(--primary-color);
+      background-color: var(--button-bg);
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      font-weight: bold;
-    }
-    .button img {
-      width: 20px;
-      height: 20px;
-      margin-right: 8px;
-    }
-    .social-icons {
-      margin-top: 20px;
     }
     .social-icons img {
       width: 24px;
       height: 24px;
       margin-right: 12px;
     }
-    .dark-toggle {
-      cursor: pointer;
-      background: none;
-      border: none;
-      font-size: 16px;
-      padding: 10px;
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background-color: var(--primary-color);
-      color: white;
-      border-radius: 5px;
+    .badges span {
+      display: inline-block;
+      background-color: #eee;
+      color: #333;
+      padding: 5px 10px;
+      border-radius: 12px;
+      margin-right: 10px;
+      margin-bottom: 5px;
+    }
+    .timeline {
+      border-left: 3px solid #2c3e50;
+      padding-left: 15px;
+      margin-left: 10px;
+    }
+    .timeline div {
+      margin-bottom: 15px;
     }
     @media (min-width: 600px) {
       .profile {
@@ -112,9 +121,9 @@
   </style>
 </head>
 <body>
-  <button class="dark-toggle" onclick="document.body.classList.toggle('dark-mode')">Toggle Dark Mode</button>
 
   <header>
+    <button class="toggle-theme" onclick="toggleTheme()">Toggle Light/Dark</button>
     <h1>PROTIVA DAS</h1>
     <p>MSc Student | Researcher in HCI/NLP/Privacy</p>
   </header>
@@ -124,55 +133,76 @@
       <img src="profile.jpg" alt="Protiva Das Profile Photo">
       <div>
         <p>
-          I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh... (About me section continues)
+          I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI) and Privacy. My MSc thesis, supervised by <a href="https://sites.google.com/site/farigsadeque" target="_blank">Professor Farig Yousuf Sadeque</a>, explores the intersection of user-centered design and digital privacy in emerging technologies.
         </p>
-        <a href="Protiva_Das_Resume.pdf" class="button" download>
-          <img src="https://cdn-icons-png.flaticon.com/512/60/60761.png" alt="Download Icon">
-          Download My Resume
-        </a>
+        <p>
+          📧 <strong>Email:</strong> dasprotiva319@gmail.com<br>
+          📱 <strong>Phone:</strong> +1 (757) 237-8006<br>
+          📍 <strong>Current Address:</strong> Norfolk, Virginia, USA<br>
+          🔗 <strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">View Profile</a>
+        </p>
+        <a href="Protiva_Das_Resume.pdf" class="button" download>Download My Resume</a>
       </div>
     </section>
 
+    <h2>Education Timeline</h2>
+    <div class="timeline">
+      <div><strong>2017:</strong> Completed Science major at Brahmanbaia Govt College</div>
+      <div><strong>2018–2023:</strong> BSc in CSE, BRAC University – CGPA 2.97</div>
+      <div><strong>2024–2025:</strong> MSc in CSE, BRAC University – CGPA 3.72 (Thesis based)</div>
+    </div>
+
+    <h2>Skills & Tools</h2>
+    <div class="badges">
+      <span>Python</span>
+      <span>NLP</span>
+      <span>Privacy</span>
+      <span>LLM</span>
+    </div>
+
     <h2>Research Projects</h2>
     <ul>
-      <li><strong>Perceptions and Impacts of Digitally Synthesized Intimate Content in Bangladesh</strong>...</li>
-      <li><strong>Workforce Transitions in Aviation Post-COVID</strong>...</li>
+      <li><strong>Digitally Synthesized Intimate Content in Bangladesh:</strong> An HCI and ethics-focused exploration of AI-generated deepfake imagery and user awareness in conservative societies.</li>
+      <li><strong>Workforce Transitions in Aviation Post-COVID:</strong> A socio-technical study of employment patterns in the aviation industry across pre-, during-, and post-pandemic phases.</li>
     </ul>
 
-    <h2>Journal Publications</h2>
+    <h2>Publications</h2>
+    <h3>Journal</h3>
     <ul>
-      <li><strong>Sentiment Analysis on Twitter Tweets About COVID-19 Vaccines...</strong></li>
+      <li><strong>Sentiment Analysis on Twitter Tweets...</strong> – Indonesian Journal of Electrical Engineering and Computer Science, 2021 [<a href="#">PDF</a>]</li>
     </ul>
-
-    <h2>Conference Publications</h2>
+    <h3>Conference</h3>
     <ul>
-      <li><strong>CNN-GRU Based Fusion Architecture...</strong></li>
+      <li><strong>Bengali License Plate Recognition...</strong> – ICCCNT 2023 [<a href="#">PDF</a>]</li>
+      <li><strong>Job Satisfaction: Deep Learning...</strong> – ICCIT 2023 [<a href="#">PDF</a>]</li>
+      <li><strong>Pre/Post-Pruning of Decision Tree...</strong> – ICOEI 2021 [<a href="#">PDF</a>]</li>
     </ul>
 
-    <h2>Conferences Attended</h2>
+    <h2>Collaborations</h2>
     <ul>
-      <li>5th CCI Symposium, Richmond, Virginia, USA, 2025</li>
+      <li><a href="https://www.bracu.ac.bd" target="_blank">BRAC University</a></li>
+      <li><a href="https://www.woosong.org" target="_blank">Woosong University, South Korea</a></li>
+      <li><a href="https://ulab.edu.bd" target="_blank">University of Liberal Arts Bangladesh</a></li>
     </ul>
 
-    <h2>Awards, Fellowships, & Grants</h2>
-    <ul>
-      <li><strong>2024–2025:</strong> BRAC University Scholarship...</li>
-    </ul>
-
-    <h2>Reach Me Here</h2>
-    <p><strong>Email:</strong> dasprotiva319@gmail.com</p>
+    <h2>Github</h2>
+    <p><a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank">Visit My GitHub</a></p>
 
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/your-linkedin/" target="_blank" title="LinkedIn">
+      <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank" title="LinkedIn">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
       </a>
-      <a href="https://www.researchgate.net/profile/your-profile" target="_blank" title="ResearchGate">
+      <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
-      </a>
-      <a href="https://orcid.org/your-orcid-id" target="_blank" title="ORCID">
-        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID">
       </a>
     </div>
   </div>
+
+  <script>
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      document.documentElement.setAttribute("data-theme", currentTheme === "dark" ? "light" : "dark");
+    }
+  </script>
 </body>
 </html>
