@@ -7,20 +7,21 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     :root {
-      --bg: #f5f7fb;
-      --bg-soft: #eef3fb;
-      --card: rgba(255, 255, 255, 0.9);
-      --text: #1a2233;
-      --muted: #5d6878;
-      --primary: #1e3a5f;
-      --secondary: #355c8c;
-      --accent: #6d5dfc;
-      --accent-soft: rgba(109, 93, 252, 0.1);
-      --line: #dbe4f0;
-      --shadow: 0 14px 35px rgba(24, 39, 75, 0.08);
-      --shadow-hover: 0 18px 45px rgba(24, 39, 75, 0.12);
-      --radius: 22px;
-      --maxw: 1180px;
+      --bg: #f6f8fc;
+      --bg2: #eef3fb;
+      --white: #ffffff;
+      --text: #172033;
+      --muted: #5d6980;
+      --primary: #183b66;
+      --primary2: #2a5d93;
+      --accent: #6c63ff;
+      --accent2: #9b8cff;
+      --gold: #f5b800;
+      --line: #dbe4f1;
+      --shadow: 0 18px 40px rgba(18, 40, 76, 0.08);
+      --shadow-hover: 0 24px 48px rgba(18, 40, 76, 0.12);
+      --radius: 24px;
+      --maxw: 1220px;
     }
 
     * {
@@ -28,20 +29,19 @@
       scroll-behavior: smooth;
     }
 
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
       font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(109, 93, 252, 0.10), transparent 24%),
-        radial-gradient(circle at top right, rgba(30, 58, 95, 0.12), transparent 24%),
-        linear-gradient(180deg, #eef3fb 0%, #f8fbff 35%, #f5f7fb 100%);
       color: var(--text);
-      line-height: 1.7;
+      background:
+        radial-gradient(circle at top left, rgba(108, 99, 255, 0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(24, 59, 102, 0.12), transparent 24%),
+        linear-gradient(180deg, #edf3fb 0%, #f8fbff 35%, #f6f8fc 100%);
+      line-height: 1.72;
     }
 
     a {
-      color: var(--secondary);
+      color: var(--primary2);
       text-decoration: none;
     }
 
@@ -49,12 +49,17 @@
       text-decoration: underline;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
     header {
       position: relative;
       overflow: hidden;
-      padding: 72px 20px 54px;
-      background: linear-gradient(135deg, #16283d 0%, #224b79 48%, #5b50db 100%);
+      background: linear-gradient(135deg, #13263a 0%, #1c4571 48%, #5d52e9 100%);
       color: white;
+      padding: 78px 20px 62px;
     }
 
     header::before,
@@ -67,75 +72,165 @@
     }
 
     header::before {
-      width: 320px;
-      height: 320px;
-      top: -120px;
+      width: 340px;
+      height: 340px;
       right: -90px;
-      background: white;
+      top: -120px;
+      background: #ffffff;
     }
 
     header::after {
-      width: 240px;
-      height: 240px;
-      bottom: -100px;
+      width: 260px;
+      height: 260px;
       left: -70px;
+      bottom: -120px;
       background: #c4b5fd;
     }
 
     .hero {
-      max-width: 1100px;
+      max-width: var(--maxw);
       margin: 0 auto;
       position: relative;
       z-index: 2;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 34px;
+      align-items: center;
     }
 
     .hero h1 {
       margin: 0;
-      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.05;
       font-weight: 800;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
-    .hero .subtitle {
-      margin-top: 14px;
+    .hero-subtitle {
+      margin-top: 16px;
       font-size: 1.12rem;
-      color: rgba(255,255,255,0.93);
-      font-weight: 500;
+      color: rgba(255,255,255,0.92);
+      max-width: 760px;
     }
 
     .hero-tags {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 24px;
     }
 
     .hero-tags span {
+      padding: 10px 15px;
+      border-radius: 999px;
       background: rgba(255,255,255,0.14);
       border: 1px solid rgba(255,255,255,0.18);
-      color: #fff;
-      padding: 9px 15px;
-      border-radius: 999px;
+      backdrop-filter: blur(10px);
       font-size: 0.92rem;
       font-weight: 600;
-      backdrop-filter: blur(10px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.22s ease;
+    }
+
+    .btn-primary {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 14px 28px rgba(255,255,255,0.16);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.24);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+      background: rgba(255,255,255,0.12);
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      backdrop-filter: blur(12px);
+      border-radius: 28px;
+      padding: 22px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+    }
+
+    .hero-profile {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .hero-profile img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 3px solid rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.2);
+    }
+
+    .hero-profile h3 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+
+    .hero-profile p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .hero-mini {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-mini div {
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.08);
+      font-size: 0.94rem;
+      color: rgba(255,255,255,0.95);
     }
 
     nav {
       position: sticky;
       top: 0;
-      z-index: 999;
-      background: rgba(16, 30, 47, 0.86);
+      z-index: 1000;
+      background: rgba(16, 28, 44, 0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     nav ul {
+      list-style: none;
       margin: 0;
       padding: 12px 18px;
-      list-style: none;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -143,7 +238,7 @@
     }
 
     nav a {
-      color: #eef5ff;
+      color: #eff5ff;
       font-weight: 600;
       font-size: 0.95rem;
       padding: 8px 14px;
@@ -152,39 +247,103 @@
     }
 
     nav a:hover {
-      text-decoration: none;
       background: rgba(255,255,255,0.10);
+      text-decoration: none;
     }
 
     .container {
       max-width: var(--maxw);
-      margin: 34px auto 64px;
+      margin: 32px auto 68px;
       padding: 0 18px;
     }
 
-    .top-layout {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
-      gap: 24px;
-      align-items: start;
+    .featured-strip {
+      background: linear-gradient(135deg, rgba(24,59,102,0.95), rgba(108,99,255,0.92));
+      color: white;
+      border-radius: 30px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 26px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .main-layout {
+    .featured-strip::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at right top, rgba(255,255,255,0.14), transparent 22%);
+      pointer-events: none;
+    }
+
+    .featured-strip h2 {
+      margin: 0 0 20px;
+      font-size: 1.6rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .featured-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .featured-pub {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 22px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      transition: 0.25s ease;
+    }
+
+    .featured-pub:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.14);
+    }
+
+    .featured-pub .tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.16);
+      margin-bottom: 12px;
+    }
+
+    .featured-pub h3 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+      line-height: 1.4;
+    }
+
+    .featured-pub p {
+      margin: 0;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.95rem;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 24px;
-      margin-top: 24px;
-      align-items: start;
     }
 
     .card {
-      background: var(--card);
-      border: 1px solid rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(255,255,255,0.72);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 26px;
       backdrop-filter: blur(10px);
       transition: 0.25s ease;
+      margin-bottom: 24px;
     }
 
     .card:hover {
@@ -192,60 +351,41 @@
       transform: translateY(-2px);
     }
 
-    .profile-card {
+    .about-card {
       display: grid;
       grid-template-columns: 180px 1fr;
       gap: 28px;
       align-items: center;
     }
 
-    .profile-card img {
+    .about-card img {
       width: 180px;
       height: 180px;
-      border-radius: 28px;
       object-fit: cover;
+      border-radius: 28px;
       border: 4px solid white;
-      box-shadow: 0 16px 36px rgba(30, 58, 95, 0.16);
-      background: #e9eef8;
+      box-shadow: 0 14px 34px rgba(24,59,102,0.14);
+      background: #e8eef8;
     }
 
-    .profile-card p {
+    .about-card p {
       margin-top: 0;
       color: var(--muted);
     }
 
     .quick-info {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 12px;
       margin-top: 18px;
     }
 
     .pill {
+      padding: 12px 14px;
+      border-radius: 14px;
       background: #f8fbff;
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 14px;
       font-size: 0.95rem;
-      color: var(--text);
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      border-radius: 14px;
-      color: white;
-      background: linear-gradient(135deg, #224b79, #6d5dfc);
-      font-weight: 700;
-      box-shadow: 0 12px 24px rgba(93, 81, 252, 0.18);
-      transition: 0.22s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      text-decoration: none;
-      box-shadow: 0 16px 30px rgba(93, 81, 252, 0.22);
     }
 
     .section-title {
@@ -258,14 +398,14 @@
     }
 
     .icon-box {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(135deg, rgba(34, 75, 121, 0.10), rgba(109, 93, 252, 0.14));
-      font-size: 1.1rem;
+      background: linear-gradient(135deg, rgba(42,93,147,0.10), rgba(108,99,255,0.14));
+      font-size: 1.08rem;
     }
 
     .list {
@@ -276,7 +416,7 @@
 
     .list li {
       border: 1px solid var(--line);
-      background: rgba(255,255,255,0.82);
+      background: rgba(255,255,255,0.84);
       border-radius: 18px;
       padding: 16px 18px;
       margin-bottom: 14px;
@@ -287,7 +427,7 @@
     }
 
     .list strong {
-      color: #17293f;
+      color: #14243b;
       font-size: 1rem;
     }
 
@@ -299,8 +439,8 @@
     .badge {
       display: inline-block;
       margin-left: 8px;
-      background: linear-gradient(135deg, #facc15, #f59e0b);
-      color: #17293f;
+      background: linear-gradient(135deg, #ffd85a, #f5b800);
+      color: #1d2433;
       font-weight: 800;
       font-size: 0.76rem;
       padding: 4px 10px;
@@ -308,10 +448,77 @@
       vertical-align: middle;
     }
 
+    .timeline {
+      position: relative;
+      margin-top: 8px;
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 7px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent), rgba(108,99,255,0.15));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 22px;
+      padding: 0 0 0 18px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -4px;
+      top: 7px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow: 0 0 0 6px rgba(108,99,255,0.10);
+    }
+
+    .timeline-date {
+      display: inline-block;
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      color: var(--accent);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .timeline-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 18px;
+    }
+
+    .timeline-card h4 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+      color: #182b45;
+    }
+
+    .timeline-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
     .compact-list {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
     }
 
     .compact-list li {
@@ -327,23 +534,6 @@
 
     .compact-list strong {
       color: var(--text);
-    }
-
-    .news-item {
-      position: relative;
-      padding-left: 18px;
-    }
-
-    .news-item::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 11px;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(109, 93, 252, 0.10);
     }
 
     .social-icons {
@@ -379,30 +569,44 @@
 
     footer {
       text-align: center;
-      padding: 28px 16px 44px;
       color: var(--muted);
       font-size: 0.95rem;
+      padding: 30px 16px 46px;
     }
 
-    @media (max-width: 980px) {
-      .top-layout,
-      .main-layout {
+    @media (max-width: 1024px) {
+      .hero,
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .featured-grid {
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 720px) {
-      .profile-card {
+    @media (max-width: 760px) {
+      .about-card,
+      .hero-profile {
         grid-template-columns: 1fr;
         text-align: center;
       }
 
-      .profile-card img {
+      .about-card img,
+      .hero-profile img {
         margin: 0 auto;
       }
 
       .quick-info {
         grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-tags {
+        justify-content: center;
       }
     }
   </style>
@@ -411,14 +615,41 @@
 
   <header>
     <div class="hero">
-      <h1>PROTIVA DAS</h1>
-      <div class="subtitle">PhD Student at Old Dominion University | Researcher in LLM, Security, NLP, HCI</div>
-      <div class="hero-tags">
-        <span>Cyberbiosecurity</span>
-        <span>Bio-LLM Security</span>
-        <span>AI Safety</span>
-        <span>NLP</span>
-        <span>HCI</span>
+      <div>
+        <h1>Protiva Das</h1>
+        <div class="hero-subtitle">
+          PhD Student at Old Dominion University, researching Large Language Models, cyberbiosecurity, AI safety, NLP, and human-centered security.
+        </div>
+
+        <div class="hero-tags">
+          <span>Cyberbiosecurity</span>
+          <span>Bio-LLM Security</span>
+          <span>AI Safety</span>
+          <span>NLP</span>
+          <span>HCI</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="Protiva_Das_Resume.pdf" class="btn btn-primary" download>Download CV</a>
+          <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank" class="btn btn-secondary">Google Scholar</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-profile">
+          <img src="profile.jpg" alt="Protiva Das Profile Photo">
+          <div>
+            <h3>Research Focus</h3>
+            <p>Securing intelligent systems in sensitive domains through robust, interpretable, and human-aware AI research.</p>
+          </div>
+        </div>
+
+        <div class="hero-mini">
+          <div>📍 Norfolk, Virginia, USA</div>
+          <div>🏫 Old Dominion University</div>
+          <div>🔬 Research Assistant, School of Cybersecurity</div>
+          <div>📧 dasprotiva319@gmail.com</div>
+        </div>
       </div>
     </div>
   </header>
@@ -438,58 +669,64 @@
   </nav>
 
   <div class="container">
-    <div class="top-layout">
-      <section id="about" class="card profile-card">
-        <img src="profile.jpg" alt="Protiva Das Profile Photo">
-        <div>
-          <p>
-            I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI), Natural Language Processing, privacy, and AI-driven security.
-          </p>
-          <p>
-            I am currently a PhD student at Old Dominion University, Norfolk, Virginia, USA, where my research focuses on Large Language Models, cyberbiosecurity, AI safety, and human-centered security. I am especially interested in secure and trustworthy AI systems for sensitive biological and societal applications.
-          </p>
-          <p>
-            Beyond academics, I enjoy travel documentaries and reading novels, which broaden my perspective and creativity. I am always eager to collaborate on impactful research that bridges technology, security, and human experience.
-          </p>
 
-          <div class="quick-info">
-            <div class="pill">📧 <strong>Email:</strong> dasprotiva319@gmail.com</div>
-            <div class="pill">📱 <strong>Phone:</strong> +1 (757) 777 6001</div>
-            <div class="pill">📍 <strong>Location:</strong> Norfolk, Virginia, USA</div>
-            <div class="pill">🔗 <strong>Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar Profile</a></div>
-          </div>
-
-          <a href="Protiva_Das_Resume.pdf" class="btn" download>Download My Resume</a>
+    <section class="featured-strip">
+      <h2>Featured Publications</h2>
+      <div class="featured-grid">
+        <div class="featured-pub">
+          <div class="tag">Featured Project</div>
+          <h3>BioShield: A Context-Aware Firewall for Securing Bio-LLMs</h3>
+          <p>
+            Research on protecting Bio-LLMs against unsafe conversational trajectories and dual-use misuse through prompt- and response-level safeguards.
+            <br><br>
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Vkqm00AAAAJ&sortby=pubdate&citation_for_view=7Vkqm00AAAAJ:mvPsJ3kp5DgC" target="_blank" style="color:white; font-weight:700;">View on Scholar →</a>
+          </p>
         </div>
-      </section>
 
-      <section id="contact" class="card">
-        <h2 class="section-title"><span class="icon-box">🌐</span>Contact & Profiles</h2>
-        <p><strong>Email:</strong> <a href="mailto:dasprotiva319@gmail.com">dasprotiva319@gmail.com</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/Protivapritthi" target="_blank">github.com/Protivapritthi</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank">Protiva Das</a></p>
-        <p><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank">ResearchGate Profile</a></p>
-        <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">View Publications</a></p>
-
-        <div class="social-icons">
-          <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank" title="LinkedIn">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-          </a>
-          <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
-          </a>
-          <a href="https://github.com/Protivapritthi" target="_blank" title="GitHub">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
-          </a>
-          <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
-            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar">
-          </a>
+        <div class="featured-pub">
+          <div class="tag">Journal 2026</div>
+          <h3>An Explainable Transformer Framework for Sentiment Analysis in Aviation Workforce Data</h3>
+          <p>
+            Decision Analytics Journal, 2026. A more interpretable deep learning approach for studying aviation workforce sentiment and explainable analytics.
+          </p>
         </div>
-      </section>
-    </div>
 
-    <div class="main-layout">
+        <div class="featured-pub">
+          <div class="tag">Journal 2025</div>
+          <h3>An Analytical Review of Preprocessing Techniques in Bengali Natural Language Processing</h3>
+          <p>
+            IEEE Access, 2025. A comprehensive review of preprocessing strategies and methodological foundations in Bengali NLP.
+            <br><br>
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Vkqm00AAAAJ&sortby=pubdate&citation_for_view=7Vkqm00AAAAJ:kRWSkSYxWN8C" target="_blank" style="color:white; font-weight:700;">View on Scholar →</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="layout">
       <div>
+        <section id="about" class="card about-card">
+          <img src="profile.jpg" alt="Protiva Das Profile Photo">
+          <div>
+            <p>
+              I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI), Natural Language Processing, privacy, and AI-driven security.
+            </p>
+            <p>
+              I am currently a PhD student at Old Dominion University, Norfolk, Virginia, USA, where my research focuses on Large Language Models, cyberbiosecurity, AI safety, and human-centered security. My work explores how advanced AI systems can be made safer, more interpretable, and more robust in high-stakes domains.
+            </p>
+            <p>
+              Beyond academics, I enjoy travel documentaries and reading novels, which broaden my perspective and creativity. I am always eager to collaborate on impactful research that bridges technology, security, and human experience.
+            </p>
+
+            <div class="quick-info">
+              <div class="pill">📧 <strong>Email:</strong> dasprotiva319@gmail.com</div>
+              <div class="pill">📱 <strong>Phone:</strong> +1 (757) 777 6001</div>
+              <div class="pill">📍 <strong>Location:</strong> Norfolk, Virginia, USA</div>
+              <div class="pill">🔗 <strong>Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar Profile</a></div>
+            </div>
+          </div>
+        </section>
+
         <section id="research" class="card">
           <h2 class="section-title"><span class="icon-box">🔬</span>Research Experience</h2>
           <ul class="list">
@@ -583,41 +820,47 @@
 
         <section class="card">
           <h2 class="section-title"><span class="icon-box">📝</span>Recent Publications</h2>
-          <ul class="list">
-            <li>
-              <strong>BioShield: A Context-Aware Firewall for Securing Bio-LLMs</strong><br>
-              <span class="meta">2026</span>
-              [<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Vkqm00AAAAJ&sortby=pubdate&citation_for_view=7Vkqm00AAAAJ:mvPsJ3kp5DgC" target="_blank">Scholar</a>]
-            </li>
-            <li>
-              <strong>An Explainable Transformer Framework for Sentiment Analysis in Aviation Workforce Data</strong><br>
-              <span class="meta">Decision Analytics Journal, 2026</span>
-            </li>
-            <li>
-              <strong>An Analytical Review of Preprocessing Techniques in Bengali Natural Language Processing</strong><br>
-              <span class="meta">IEEE Access, 2025</span>
-              [<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Vkqm00AAAAJ&sortby=pubdate&citation_for_view=7Vkqm00AAAAJ:kRWSkSYxWN8C" target="_blank">Scholar</a>]
-            </li>
-          </ul>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">2026</div>
+              <div class="timeline-card">
+                <h4>BioShield: A Context-Aware Firewall for Securing Bio-LLMs</h4>
+                <p>
+                  A research effort on protecting Bio-LLMs from unsafe conversational exploitation and dual-use misuse.
+                  [<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Vkqm00AAAAJ&sortby=pubdate&citation_for_view=7Vkqm00AAAAJ:mvPsJ3kp5DgC" target="_blank">Scholar</a>]
+                </p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2026</div>
+              <div class="timeline-card">
+                <h4>An Explainable Transformer Framework for Sentiment Analysis in Aviation Workforce Data</h4>
+                <p>Decision Analytics Journal, 2026.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">2025</div>
+              <div class="timeline-card">
+                <h4>An Analytical Review of Preprocessing Techniques in Bengali Natural Language Processing</h4>
+                <p>
+                  IEEE Access, 2025.
+                  [<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Vkqm00AAAAJ&sortby=pubdate&citation_for_view=7Vkqm00AAAAJ:kRWSkSYxWN8C" target="_blank">Scholar</a>]
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
       </div>
 
       <div>
         <section class="card">
           <h2 class="section-title"><span class="icon-box">🎤</span>Conference Publications</h2>
-          <ul class="list">
-            <li>
-              <strong>CNN-GRU Based Fusion Architecture for Bengali License Plate Recognition with Explainable AI</strong><br>
-              <span class="meta">14th ICCCNT, 2023</span>
-            </li>
-            <li>
-              <strong>Unveiling Employee Job Satisfaction: Harnessing Deep Learning for Sentiment Analysis</strong><br>
-              <span class="meta">26th ICCIT, 2023</span>
-            </li>
-            <li>
-              <strong>A Comprehensive Study on Pre-Pruning and Post-Pruning Methods of Decision Tree Classification Algorithm</strong><br>
-              <span class="meta">5th ICOEI, 2021</span>
-            </li>
+          <ul class="compact-list">
+            <li><strong>CNN-GRU Based Fusion Architecture for Bengali License Plate Recognition with Explainable AI</strong><br>14th ICCCNT, 2023</li>
+            <li><strong>Unveiling Employee Job Satisfaction: Harnessing Deep Learning for Sentiment Analysis</strong><br>26th ICCIT, 2023</li>
+            <li><strong>A Comprehensive Study on Pre-Pruning and Post-Pruning Methods of Decision Tree Classification Algorithm</strong><br>5th ICOEI, 2021</li>
           </ul>
         </section>
 
@@ -645,24 +888,39 @@
 
         <section id="news" class="card">
           <h2 class="section-title"><span class="icon-box">📰</span>News</h2>
-          <ul class="compact-list">
-            <li class="news-item">
-              <strong>April 13–14, 2026</strong><br>
-              Attended Commonwealth Cybersecurity Initiative Symposium in Richmond.
-            </li>
-            <li class="news-item">
-              <strong>March 26, 2026</strong><br>
-              Became a PC member / reviewer for IEEE Security and Privacy 2026.
-            </li>
-            <li class="news-item">
-              <strong>February 28, 2026</strong><br>
-              Submitted my first paper as a PhD student.
-            </li>
-            <li class="news-item">
-              <strong>January 2026</strong><br>
-              Started PhD at Old Dominion University.
-            </li>
-          </ul>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-date">April 13–14, 2026</div>
+              <div class="timeline-card">
+                <h4>Attended Commonwealth Cybersecurity Initiative Symposium</h4>
+                <p>Participated in the symposium in Richmond, Virginia.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">March 26, 2026</div>
+              <div class="timeline-card">
+                <h4>Became a PC Member / Reviewer</h4>
+                <p>Joined the review and program committee activities for IEEE Security and Privacy 2026.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">February 28, 2026</div>
+              <div class="timeline-card">
+                <h4>Submitted First Paper as a PhD Student</h4>
+                <p>Reached an important early milestone in my doctoral research journey.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-date">January 2026</div>
+              <div class="timeline-card">
+                <h4>Started PhD at Old Dominion University</h4>
+                <p>Began doctoral studies in Computer Science at Old Dominion University.</p>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section id="awards" class="card">
@@ -681,11 +939,28 @@
           </ul>
         </section>
 
-        <section class="card">
-          <h2 class="section-title"><span class="icon-box">🌍</span>Language Proficiency Test</h2>
-          <ul class="compact-list">
-            <li><strong>IELTS</strong><br>6.5 out of 9.0 (No band less than 6)</li>
-          </ul>
+        <section id="contact" class="card">
+          <h2 class="section-title"><span class="icon-box">🌐</span>Contact & Profiles</h2>
+          <p><strong>Email:</strong> <a href="mailto:dasprotiva319@gmail.com">dasprotiva319@gmail.com</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/Protivapritthi" target="_blank">github.com/Protivapritthi</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank">Protiva Das</a></p>
+          <p><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank">ResearchGate Profile</a></p>
+          <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">View Publications</a></p>
+
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank" title="LinkedIn">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
+            </a>
+            <a href="https://github.com/Protivapritthi" target="_blank" title="GitHub">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+            </a>
+            <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
+              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar">
+            </a>
+          </div>
         </section>
       </div>
     </div>
