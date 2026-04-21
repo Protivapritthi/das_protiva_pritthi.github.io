@@ -7,17 +7,20 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     :root {
-      --bg: #f4f7fb;
-      --card: rgba(255, 255, 255, 0.88);
-      --text: #1f2937;
-      --muted: #5b6472;
-      --primary: #1f4e79;
-      --primary-2: #345f8a;
-      --accent: #8b5cf6;
-      --line: #dbe3ee;
-      --shadow: 0 12px 30px rgba(23, 37, 84, 0.08);
-      --radius: 18px;
-      --maxw: 1100px;
+      --bg: #f5f7fb;
+      --bg-soft: #eef3fb;
+      --card: rgba(255, 255, 255, 0.9);
+      --text: #1a2233;
+      --muted: #5d6878;
+      --primary: #1e3a5f;
+      --secondary: #355c8c;
+      --accent: #6d5dfc;
+      --accent-soft: rgba(109, 93, 252, 0.1);
+      --line: #dbe4f0;
+      --shadow: 0 14px 35px rgba(24, 39, 75, 0.08);
+      --shadow-hover: 0 18px 45px rgba(24, 39, 75, 0.12);
+      --radius: 22px;
+      --maxw: 1180px;
     }
 
     * {
@@ -25,19 +28,20 @@
       scroll-behavior: smooth;
     }
 
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
       font-family: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(139, 92, 246, 0.08), transparent 24%),
-        radial-gradient(circle at top right, rgba(31, 78, 121, 0.10), transparent 22%),
-        linear-gradient(180deg, #eef4fb 0%, #f9fbfe 40%, #f4f7fb 100%);
+        radial-gradient(circle at top left, rgba(109, 93, 252, 0.10), transparent 24%),
+        radial-gradient(circle at top right, rgba(30, 58, 95, 0.12), transparent 24%),
+        linear-gradient(180deg, #eef3fb 0%, #f8fbff 35%, #f5f7fb 100%);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.7;
     }
 
     a {
-      color: var(--primary);
+      color: var(--secondary);
       text-decoration: none;
     }
 
@@ -48,11 +52,9 @@
     header {
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #18324a 0%, #1f4e79 48%, #4f46e5 100%);
+      padding: 72px 20px 54px;
+      background: linear-gradient(135deg, #16283d 0%, #224b79 48%, #5b50db 100%);
       color: white;
-      padding: 56px 20px 40px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
     }
 
     header::before,
@@ -60,138 +62,154 @@
       content: "";
       position: absolute;
       border-radius: 50%;
-      opacity: 0.18;
       pointer-events: none;
+      opacity: 0.18;
     }
 
     header::before {
-      width: 280px;
-      height: 280px;
-      background: #ffffff;
+      width: 320px;
+      height: 320px;
       top: -120px;
-      right: -80px;
+      right: -90px;
+      background: white;
     }
 
     header::after {
-      width: 220px;
-      height: 220px;
-      background: #c4b5fd;
+      width: 240px;
+      height: 240px;
       bottom: -100px;
-      left: -80px;
+      left: -70px;
+      background: #c4b5fd;
     }
 
-    .hero-inner {
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
       position: relative;
       z-index: 2;
-      max-width: 950px;
-      margin: 0 auto;
+      text-align: center;
     }
 
-    h1 {
+    .hero h1 {
       margin: 0;
-      font-size: clamp(2.3rem, 5vw, 3.3rem);
-      letter-spacing: 1px;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
       font-weight: 800;
+      letter-spacing: 1px;
     }
 
-    .subtitle {
-      margin-top: 12px;
-      font-size: 1.08rem;
-      color: rgba(255, 255, 255, 0.92);
+    .hero .subtitle {
+      margin-top: 14px;
+      font-size: 1.12rem;
+      color: rgba(255,255,255,0.93);
       font-weight: 500;
     }
 
     .hero-tags {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-top: 22px;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
     }
 
     .hero-tags span {
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(8px);
-      padding: 8px 14px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: #fff;
+      padding: 9px 15px;
       border-radius: 999px;
       font-size: 0.92rem;
       font-weight: 600;
+      backdrop-filter: blur(10px);
     }
 
     nav {
       position: sticky;
       top: 0;
-      z-index: 1000;
-      background: rgba(18, 33, 51, 0.88);
-      backdrop-filter: blur(10px);
+      z-index: 999;
+      background: rgba(16, 30, 47, 0.86);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     nav ul {
-      list-style: none;
       margin: 0;
-      padding: 12px 20px;
+      padding: 12px 18px;
+      list-style: none;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 10px 18px;
+      gap: 10px 14px;
     }
 
     nav a {
-      color: #eef4ff;
+      color: #eef5ff;
       font-weight: 600;
       font-size: 0.95rem;
-      padding: 8px 12px;
+      padding: 8px 14px;
       border-radius: 999px;
-      transition: 0.25s ease;
+      transition: 0.2s ease;
     }
 
     nav a:hover {
       text-decoration: none;
-      background: rgba(255,255,255,0.11);
+      background: rgba(255,255,255,0.10);
     }
 
     .container {
       max-width: var(--maxw);
-      margin: 36px auto 60px;
+      margin: 34px auto 64px;
       padding: 0 18px;
     }
 
-    .grid {
+    .top-layout {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.25fr 0.75fr;
       gap: 24px;
+      align-items: start;
+    }
+
+    .main-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
       align-items: start;
     }
 
     .card {
       background: var(--card);
-      border: 1px solid rgba(255,255,255,0.55);
-      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.7);
       border-radius: var(--radius);
+      box-shadow: var(--shadow);
       padding: 26px;
       backdrop-filter: blur(10px);
+      transition: 0.25s ease;
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
     }
 
     .profile-card {
       display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 26px;
+      grid-template-columns: 180px 1fr;
+      gap: 28px;
       align-items: center;
     }
 
     .profile-card img {
-      width: 170px;
-      height: 170px;
+      width: 180px;
+      height: 180px;
+      border-radius: 28px;
       object-fit: cover;
-      border-radius: 24px;
       border: 4px solid white;
-      box-shadow: 0 12px 30px rgba(31, 78, 121, 0.16);
-      background: #e8eef7;
+      box-shadow: 0 16px 36px rgba(30, 58, 95, 0.16);
+      background: #e9eef8;
     }
 
-    .profile-text p {
+    .profile-card p {
       margin-top: 0;
       color: var(--muted);
     }
@@ -203,8 +221,8 @@
       margin-top: 18px;
     }
 
-    .info-pill {
-      background: #f7f9fd;
+    .pill {
+      background: #f8fbff;
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 12px 14px;
@@ -212,71 +230,65 @@
       color: var(--text);
     }
 
-    .resume-btn {
+    .btn {
       display: inline-block;
-      margin-top: 18px;
-      background: linear-gradient(135deg, var(--primary), #4f46e5);
-      color: white;
+      margin-top: 20px;
       padding: 12px 20px;
-      border-radius: 12px;
+      border-radius: 14px;
+      color: white;
+      background: linear-gradient(135deg, #224b79, #6d5dfc);
       font-weight: 700;
-      box-shadow: 0 10px 20px rgba(79, 70, 229, 0.18);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 12px 24px rgba(93, 81, 252, 0.18);
+      transition: 0.22s ease;
     }
 
-    .resume-btn:hover {
-      text-decoration: none;
+    .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 16px 28px rgba(79, 70, 229, 0.22);
-    }
-
-    section {
-      margin-top: 28px;
+      text-decoration: none;
+      box-shadow: 0 16px 30px rgba(93, 81, 252, 0.22);
     }
 
     .section-title {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 1.55rem;
       margin: 0 0 16px;
-      color: #18324a;
+      font-size: 1.45rem;
+      color: var(--primary);
     }
 
-    .section-title .icon {
+    .icon-box {
       width: 40px;
       height: 40px;
+      border-radius: 12px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      border-radius: 12px;
-      background: linear-gradient(135deg, rgba(31, 78, 121, 0.12), rgba(139, 92, 246, 0.14));
+      background: linear-gradient(135deg, rgba(34, 75, 121, 0.10), rgba(109, 93, 252, 0.14));
       font-size: 1.1rem;
     }
 
     .list {
       list-style: none;
-      margin: 0;
       padding: 0;
+      margin: 0;
     }
 
     .list li {
-      background: rgba(255,255,255,0.75);
       border: 1px solid var(--line);
-      border-radius: 16px;
+      background: rgba(255,255,255,0.82);
+      border-radius: 18px;
       padding: 16px 18px;
       margin-bottom: 14px;
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
     }
 
-    .list li:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(31, 78, 121, 0.08);
+    .list li:last-child {
+      margin-bottom: 0;
     }
 
     .list strong {
-      color: #14273b;
-      font-size: 1.01rem;
+      color: #17293f;
+      font-size: 1rem;
     }
 
     .meta {
@@ -288,40 +300,50 @@
       display: inline-block;
       margin-left: 8px;
       background: linear-gradient(135deg, #facc15, #f59e0b);
-      color: #1f2937;
+      color: #17293f;
       font-weight: 800;
-      font-size: 0.78rem;
-      border-radius: 999px;
+      font-size: 0.76rem;
       padding: 4px 10px;
+      border-radius: 999px;
       vertical-align: middle;
     }
 
-    .side-card h3 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      color: #18324a;
-      font-size: 1.18rem;
-    }
-
-    .mini-list {
+    .compact-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
 
-    .mini-list li {
-      padding: 12px 0;
+    .compact-list li {
+      padding: 14px 0;
       border-bottom: 1px solid var(--line);
       color: var(--muted);
     }
 
-    .mini-list li:last-child {
+    .compact-list li:last-child {
       border-bottom: none;
+      padding-bottom: 0;
     }
 
-    .highlight {
+    .compact-list strong {
       color: var(--text);
-      font-weight: 700;
+    }
+
+    .news-item {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .news-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 11px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(109, 93, 252, 0.10);
     }
 
     .social-icons {
@@ -335,19 +357,19 @@
       width: 46px;
       height: 46px;
       border-radius: 14px;
-      background: #ffffff;
+      background: white;
       border: 1px solid var(--line);
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      transition: 0.2s ease;
     }
 
     .social-icons a:hover {
       transform: translateY(-2px);
       text-decoration: none;
-      box-shadow: 0 12px 22px rgba(15, 23, 42, 0.09);
+      box-shadow: 0 12px 22px rgba(15, 23, 42, 0.08);
     }
 
     .social-icons img {
@@ -357,18 +379,19 @@
 
     footer {
       text-align: center;
+      padding: 28px 16px 44px;
       color: var(--muted);
-      padding: 30px 16px 45px;
       font-size: 0.95rem;
     }
 
-    @media (max-width: 900px) {
-      .grid {
+    @media (max-width: 980px) {
+      .top-layout,
+      .main-layout {
         grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 720px) {
       .profile-card {
         grid-template-columns: 1fr;
         text-align: center;
@@ -387,15 +410,15 @@
 <body>
 
   <header>
-    <div class="hero-inner">
+    <div class="hero">
       <h1>PROTIVA DAS</h1>
       <div class="subtitle">PhD Student at Old Dominion University | Researcher in LLM, Security, NLP, HCI</div>
       <div class="hero-tags">
         <span>Cyberbiosecurity</span>
         <span>Bio-LLM Security</span>
         <span>AI Safety</span>
-        <span>Human-Centered Computing</span>
-        <span>Natural Language Processing</span>
+        <span>NLP</span>
+        <span>HCI</span>
       </div>
     </div>
   </header>
@@ -403,11 +426,11 @@
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
-      <li><a href="#research">Research Experience</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#publications">Publications</a></li>
-      <li><a href="#reviewer">Reviewer & PC Members</a></li>
+      <li><a href="#reviewer">Reviewer</a></li>
       <li><a href="#news">News</a></li>
       <li><a href="#awards">Awards</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -415,31 +438,60 @@
   </nav>
 
   <div class="container">
-    <div class="grid">
-      <div>
-        <section id="about" class="card profile-card">
-          <img src="profile.jpg" alt="Protiva Das Profile Photo">
-          <div class="profile-text">
-            <p>
-              I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI), Natural Language Processing, privacy, and AI-driven security. I am currently a PhD student at Old Dominion University, Norfolk, Virginia, USA, where my research focuses on Large Language Models, cyberbiosecurity, AI safety, and human-centered security.
-            </p>
-            <p>
-              Beyond academics, I enjoy immersing myself in travel documentaries and reading novels, which broaden my perspective and creativity. I am always eager to collaborate on impactful research that bridges technology, security, and human experience.
-            </p>
+    <div class="top-layout">
+      <section id="about" class="card profile-card">
+        <img src="profile.jpg" alt="Protiva Das Profile Photo">
+        <div>
+          <p>
+            I am a passionate researcher with a strong academic background in Computer Science. I completed both my BSc and MSc from BRAC University, Bangladesh, where I developed a deep interest in Human-Computer Interaction (HCI), Natural Language Processing, privacy, and AI-driven security.
+          </p>
+          <p>
+            I am currently a PhD student at Old Dominion University, Norfolk, Virginia, USA, where my research focuses on Large Language Models, cyberbiosecurity, AI safety, and human-centered security. I am especially interested in secure and trustworthy AI systems for sensitive biological and societal applications.
+          </p>
+          <p>
+            Beyond academics, I enjoy travel documentaries and reading novels, which broaden my perspective and creativity. I am always eager to collaborate on impactful research that bridges technology, security, and human experience.
+          </p>
 
-            <div class="quick-info">
-              <div class="info-pill">📧 <strong>Email:</strong> dasprotiva319@gmail.com</div>
-              <div class="info-pill">📱 <strong>Phone:</strong> +1 (757) 777 6001</div>
-              <div class="info-pill">📍 <strong>Location:</strong> Norfolk, Virginia, USA</div>
-              <div class="info-pill">🔗 <strong>Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar Profile</a></div>
-            </div>
-
-            <a href="Protiva_Das_Resume.pdf" class="resume-btn" download>Download My Resume</a>
+          <div class="quick-info">
+            <div class="pill">📧 <strong>Email:</strong> dasprotiva319@gmail.com</div>
+            <div class="pill">📱 <strong>Phone:</strong> +1 (757) 777 6001</div>
+            <div class="pill">📍 <strong>Location:</strong> Norfolk, Virginia, USA</div>
+            <div class="pill">🔗 <strong>Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">Google Scholar Profile</a></div>
           </div>
-        </section>
 
+          <a href="Protiva_Das_Resume.pdf" class="btn" download>Download My Resume</a>
+        </div>
+      </section>
+
+      <section id="contact" class="card">
+        <h2 class="section-title"><span class="icon-box">🌐</span>Contact & Profiles</h2>
+        <p><strong>Email:</strong> <a href="mailto:dasprotiva319@gmail.com">dasprotiva319@gmail.com</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Protivapritthi" target="_blank">github.com/Protivapritthi</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank">Protiva Das</a></p>
+        <p><strong>ResearchGate:</strong> <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank">ResearchGate Profile</a></p>
+        <p><strong>Google Scholar:</strong> <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank">View Publications</a></p>
+
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank" title="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
+          </a>
+          <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
+          </a>
+          <a href="https://github.com/Protivapritthi" target="_blank" title="GitHub">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
+          </a>
+          <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
+            <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar">
+          </a>
+        </div>
+      </section>
+    </div>
+
+    <div class="main-layout">
+      <div>
         <section id="research" class="card">
-          <h2 class="section-title"><span class="icon">🔬</span>Research Experience</h2>
+          <h2 class="section-title"><span class="icon-box">🔬</span>Research Experience</h2>
           <ul class="list">
             <li>
               <strong>Research Assistant</strong>, Old Dominion University, School of Cybersecurity<br>
@@ -465,7 +517,7 @@
         </section>
 
         <section id="education" class="card">
-          <h2 class="section-title"><span class="icon">🎓</span>Education</h2>
+          <h2 class="section-title"><span class="icon-box">🎓</span>Education</h2>
           <ul class="list">
             <li>
               <strong>PhD in Computer Science</strong>, College of Sciences, Old Dominion University, Norfolk, Virginia, USA<br>
@@ -487,11 +539,11 @@
         </section>
 
         <section id="projects" class="card">
-          <h2 class="section-title"><span class="icon">🧪</span>Research Projects</h2>
+          <h2 class="section-title"><span class="icon-box">🧪</span>Research Projects</h2>
           <ul class="list">
             <li>
               <strong>Cyberbiosecurity and Bio-LLM Security</strong><br>
-              Ongoing research on improving the security of biological large language models against dual-use misuse and multi-turn jailbreak attacks. This work studies how Bio-LLMs may be manipulated across multi-step conversations and explores defense mechanisms for safer deployment in sensitive biological domains.
+              Ongoing research on improving the security of biological large language models against dual-use misuse and multi-turn jailbreak attacks. This work investigates how Bio-LLMs may be manipulated through multi-step conversational strategies and explores robust defense mechanisms for safer deployment.
             </li>
             <li>
               <strong>BioShield: A Context-Aware Firewall for Securing Bio-LLMs</strong><br>
@@ -510,7 +562,7 @@
         </section>
 
         <section id="publications" class="card">
-          <h2 class="section-title"><span class="icon">📚</span>Journal Publications</h2>
+          <h2 class="section-title"><span class="icon-box">📚</span>Journal Publications</h2>
           <ul class="list">
             <li>
               <strong>Sentiment Analysis on Twitter Tweets About COVID-19 Vaccines Using NLP and Supervised KNN Classification Algorithm</strong>
@@ -530,13 +582,8 @@
         </section>
 
         <section class="card">
-          <h2 class="section-title"><span class="icon">📝</span>Recent Publication</h2>
+          <h2 class="section-title"><span class="icon-box">📝</span>Recent Publications</h2>
           <ul class="list">
-            <li>
-              <strong>An Analytical Review of Preprocessing Techniques in Bengali Natural Language Processing</strong><br>
-              <span class="meta">IEEE Access, 2025</span>
-              [<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Vkqm00AAAAJ&sortby=pubdate&citation_for_view=7Vkqm00AAAAJ:kRWSkSYxWN8C" target="_blank">Scholar</a>]
-            </li>
             <li>
               <strong>BioShield: A Context-Aware Firewall for Securing Bio-LLMs</strong><br>
               <span class="meta">2026</span>
@@ -546,92 +593,99 @@
               <strong>An Explainable Transformer Framework for Sentiment Analysis in Aviation Workforce Data</strong><br>
               <span class="meta">Decision Analytics Journal, 2026</span>
             </li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h2 class="section-title"><span class="icon">🎤</span>Conference Publications</h2>
-          <ul class="list">
-            <li><strong>CNN-GRU Based Fusion Architecture for Bengali License Plate Recognition with Explainable AI</strong><br><span class="meta">14th ICCCNT, 2023</span></li>
-            <li><strong>Unveiling Employee Job Satisfaction: Harnessing Deep Learning for Sentiment Analysis</strong><br><span class="meta">26th ICCIT, 2023</span></li>
-            <li><strong>A Comprehensive Study on Pre-Pruning and Post-Pruning Methods of Decision Tree Classification Algorithm</strong><br><span class="meta">5th ICOEI, 2021</span></li>
+            <li>
+              <strong>An Analytical Review of Preprocessing Techniques in Bengali Natural Language Processing</strong><br>
+              <span class="meta">IEEE Access, 2025</span>
+              [<a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=7Vkqm00AAAAJ&sortby=pubdate&citation_for_view=7Vkqm00AAAAJ:kRWSkSYxWN8C" target="_blank">Scholar</a>]
+            </li>
           </ul>
         </section>
       </div>
 
       <div>
-        <section class="card side-card">
-          <h3>Conferences Attended</h3>
-          <ul class="mini-list">
-            <li><span class="highlight">6th CCI Symposium</span><br>Richmond, Virginia, USA, 2026</li>
-            <li><span class="highlight">5th CCI Symposium</span><br>Richmond, Virginia, USA, 2025</li>
-            <li><span class="highlight">26th ICCIT</span><br>Cox's Bazar, Bangladesh, 2023</li>
-            <li><span class="highlight">14th ICCNT</span><br>IIT Delhi, India</li>
-            <li><span class="highlight">5th ICOEI</span><br>2021 (Remote)</li>
+        <section class="card">
+          <h2 class="section-title"><span class="icon-box">🎤</span>Conference Publications</h2>
+          <ul class="list">
+            <li>
+              <strong>CNN-GRU Based Fusion Architecture for Bengali License Plate Recognition with Explainable AI</strong><br>
+              <span class="meta">14th ICCCNT, 2023</span>
+            </li>
+            <li>
+              <strong>Unveiling Employee Job Satisfaction: Harnessing Deep Learning for Sentiment Analysis</strong><br>
+              <span class="meta">26th ICCIT, 2023</span>
+            </li>
+            <li>
+              <strong>A Comprehensive Study on Pre-Pruning and Post-Pruning Methods of Decision Tree Classification Algorithm</strong><br>
+              <span class="meta">5th ICOEI, 2021</span>
+            </li>
           </ul>
         </section>
 
-        <section id="reviewer" class="card side-card">
-          <h3>Reviewer and PC Members</h3>
-          <ul class="mini-list">
+        <section class="card">
+          <h2 class="section-title"><span class="icon-box">🏛️</span>Conferences Attended</h2>
+          <ul class="compact-list">
+            <li><strong>6th CCI Symposium</strong><br>Richmond, Virginia, USA, 2026</li>
+            <li><strong>5th CCI Symposium</strong><br>Richmond, Virginia, USA, 2025</li>
+            <li><strong>26th ICCIT</strong><br>Cox's Bazar, Bangladesh, 2023</li>
+            <li><strong>14th ICCNT</strong><br>IIT Delhi, India</li>
+            <li><strong>5th ICOEI</strong><br>2021 (Remote)</li>
+          </ul>
+        </section>
+
+        <section id="reviewer" class="card">
+          <h2 class="section-title"><span class="icon-box">🧾</span>Reviewer and PC Members</h2>
+          <ul class="compact-list">
             <li>
-              <span class="highlight">CyberBio'26 / IEEE S&amp;P 2026 Workshop</span><br>
+              <strong>CyberBio'26 / IEEE S&amp;P 2026 Workshop</strong><br>
               California, USA<br>
               <a href="https://cyberbio26.ieee-security.org/organization.html" target="_blank">Organization Link</a>
             </li>
           </ul>
         </section>
 
-        <section id="news" class="card side-card">
-          <h3>News</h3>
-          <ul class="mini-list">
-            <li><span class="highlight">January 2026</span><br>Started PhD at Old Dominion University.</li>
-            <li><span class="highlight">February 28, 2026</span><br>Submitted my first paper as a PhD student.</li>
-            <li><span class="highlight">March 26, 2026</span><br>Became a PC member / reviewer for IEEE Security and Privacy 2026.</li>
-            <li><span class="highlight">April 13–14, 2026</span><br>Attended Commonwealth Cybersecurity Initiative Symposium in Richmond.</li>
+        <section id="news" class="card">
+          <h2 class="section-title"><span class="icon-box">📰</span>News</h2>
+          <ul class="compact-list">
+            <li class="news-item">
+              <strong>April 13–14, 2026</strong><br>
+              Attended Commonwealth Cybersecurity Initiative Symposium in Richmond.
+            </li>
+            <li class="news-item">
+              <strong>March 26, 2026</strong><br>
+              Became a PC member / reviewer for IEEE Security and Privacy 2026.
+            </li>
+            <li class="news-item">
+              <strong>February 28, 2026</strong><br>
+              Submitted my first paper as a PhD student.
+            </li>
+            <li class="news-item">
+              <strong>January 2026</strong><br>
+              Started PhD at Old Dominion University.
+            </li>
           </ul>
         </section>
 
-        <section id="awards" class="card side-card">
-          <h3>Awards, Fellowships, & Grants</h3>
-          <ul class="mini-list">
+        <section id="awards" class="card">
+          <h2 class="section-title"><span class="icon-box">🏅</span>Awards, Fellowships, & Grants</h2>
+          <ul class="compact-list">
             <li>
-              <span class="highlight">BRAC University Scholarship (2024–2025)</span><br>
+              <strong>BRAC University Scholarship (2024–2025)</strong><br>
               50% tuition waiver + 10% waiver in final semester<br>
               <strong>Total Awarded:</strong> ৳১,২০,০০০ BDT (~$1,100 USD)
             </li>
             <li>
-              <span class="highlight">Research Grant – Woosong University (2023–2025)</span><br>
+              <strong>Research Grant – Woosong University (2023–2025)</strong><br>
               Awarded for collaborative research work<br>
               <strong>Total Awarded:</strong> ৳১,৪০,০০০ BDT (~$1,280 USD)
             </li>
           </ul>
         </section>
 
-        <section class="card side-card">
-          <h3>Language Proficiency Test</h3>
-          <ul class="mini-list">
-            <li><span class="highlight">IELTS</span><br>6.5 out of 9.0 (No band less than 6)</li>
+        <section class="card">
+          <h2 class="section-title"><span class="icon-box">🌍</span>Language Proficiency Test</h2>
+          <ul class="compact-list">
+            <li><strong>IELTS</strong><br>6.5 out of 9.0 (No band less than 6)</li>
           </ul>
-        </section>
-
-        <section id="contact" class="card side-card">
-          <h3>Reach Me Here</h3>
-          <p><strong>Email:</strong> <a href="mailto:dasprotiva319@gmail.com">dasprotiva319@gmail.com</a></p>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/protiva-das-504147198/" target="_blank" title="LinkedIn">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn">
-            </a>
-            <a href="https://www.researchgate.net/profile/Protiva-Das" target="_blank" title="ResearchGate">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate">
-            </a>
-            <a href="https://github.com/Protivapritthi" target="_blank" title="GitHub">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub">
-            </a>
-            <a href="https://scholar.google.com/citations?user=7Vkqm00AAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar">
-            </a>
-          </div>
         </section>
       </div>
     </div>
